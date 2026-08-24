@@ -1,0 +1,10 @@
+{
+  "name": "archivo-criaturas-mutantes",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Máquina de intenciones tipadas — Archivo de criaturas mutantes",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  }
+}
