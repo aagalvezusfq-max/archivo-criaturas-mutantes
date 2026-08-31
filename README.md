@@ -135,4 +135,4 @@ y se pierda la unión literal.
 - Repositorio: https://github.com/aagalvezusfq-max/archivo-criaturas-mutantes
 - Rama de trabajo: [`feature/proyecto-1`](https://github.com/aagalvezusfq-max/archivo-criaturas-mutantes/tree/feature/proyecto-1)
 - Historial: commits de la versión JavaScript, luego la migración a TypeScript
-- Pull request: [abrir PR de `feature/proyecto-1` hacia `main`](https://github.com/aagalvezusfq-max/archivo-criaturas-mutantes/compare/main...feature/proyecto-1?expand=1)
+- Pull request integrado: [#1](https://github.com/aagalvezusfq-max/archivo-criaturas-mutantes/pull/1) (`feature/proyecto-1` → `main`, mergeado)
