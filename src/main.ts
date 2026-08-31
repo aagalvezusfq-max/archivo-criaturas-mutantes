@@ -1,12 +1,10 @@
-// main.js
 import { crearArchivo } from "./generador.js";
 
-async function main() {
+async function main(): Promise<void> {
   const archivo = crearArchivo();
 
   console.log("=== Generando 4 criaturas ===\n");
 
-  // Promise.all para lanzar generaciones en paralelo (no bloqueante).
   const criaturas = await Promise.all(
     Array.from({ length: 4 }, () => archivo.generarCriatura())
   );
@@ -25,9 +23,10 @@ async function main() {
   console.log("\n=== Caso de error controlado: catálogo vacío ===");
   try {
     await archivo.generarCriatura({ catalogoMutaciones: [] });
-  } catch (error) {
-    console.log(`Error capturado correctamente: ${error.message}`);
+  } catch (error: unknown) {
+    const mensaje = error instanceof Error ? error.message : String(error);
+    console.log(`Error capturado correctamente: ${mensaje}`);
   }
 }
 
-main();
+void main();

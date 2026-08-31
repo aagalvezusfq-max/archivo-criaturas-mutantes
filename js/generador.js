@@ -5,6 +5,7 @@ import { generarDescripcion } from "./descripcion.js";
 // Simula una consulta asíncrona no bloqueante a un catálogo externo
 // (ej. una base de datos remota). Devuelve una Promise que se rechaza
 // si el catálogo está vacío -> maneja el caso de error exigido por la consigna.
+// setTimeout encola un macrotask en el Event Loop: el hilo no se bloquea.
 function escanearCatalogo(catalogo, demoraMs = 150) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -42,11 +43,13 @@ export function crearArchivo() {
     } = opciones;
 
     try {
-      // Promesas + async/await: cada "escaneo" es no bloqueante.
-      const especie = await escanearCatalogo(catalogoEspecies);
-      const habitat = await escanearCatalogo(catalogoHabitats);
-      const temperamento = await escanearCatalogo(catalogoTemperamentos);
-      const mutacion = await escanearCatalogo(catalogoMutaciones);
+      // Promise.all: los cuatro escaneos corren en paralelo (no bloqueante).
+      const [especie, habitat, temperamento, mutacion] = await Promise.all([
+        escanearCatalogo(catalogoEspecies),
+        escanearCatalogo(catalogoHabitats),
+        escanearCatalogo(catalogoTemperamentos),
+        escanearCatalogo(catalogoMutaciones),
+      ]);
 
       const rasgos = { especie, habitat, temperamento, mutacion };
 
