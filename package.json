@@ -1,10 +1,17 @@
 {
   "name": "archivo-criaturas-mutantes",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "description": "Máquina de intenciones tipadas — Archivo de criaturas mutantes",
-  "main": "src/main.js",
+  "main": "dist/main.js",
   "scripts": {
-    "start": "node src/main.js"
+    "start": "node dist/main.js",
+    "start:js": "node js/main.js",
+    "build": "tsc",
+    "demo": "tsc && node dist/main.js"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.0",
+    "typescript": "^7.0.2"
   }
 }
