@@ -133,6 +133,6 @@ y se pierda la unión literal.
 ## Evidencia de GitHub Flow
 
 - Repositorio: https://github.com/aagalvezusfq-max/archivo-criaturas-mutantes
-- Rama de trabajo: `feature/proyecto-1`
+- Rama de trabajo: [`feature/proyecto-1`](https://github.com/aagalvezusfq-max/archivo-criaturas-mutantes/tree/feature/proyecto-1)
 - Historial: commits de la versión JavaScript, luego la migración a TypeScript
-- Integración: pull request de `feature/proyecto-1` hacia `main`
+- Pull request: [abrir PR de `feature/proyecto-1` hacia `main`](https://github.com/aagalvezusfq-max/archivo-criaturas-mutantes/compare/main...feature/proyecto-1?expand=1)
